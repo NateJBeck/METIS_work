@@ -1,3 +1,12 @@
+class Deck
+	attr_reader :name
+
+	def initialize(name)
+		@name = name
+	end
+end
+
+
 class FlashcardGame
 	def initialize(decks)
 		@decks = decks
@@ -22,7 +31,7 @@ class FlashcardGame
 
 	def list_out_decks
 		@decks.each do |deck|
-			puts deck
+			puts deck.name
 		end
 	end
 
@@ -34,9 +43,12 @@ class FlashcardGame
 
 end
 
+#STARTUP SCRIPT -- creates game, configures outside of the CLASS
+
 decks = []
 
-decks << "Spanish" << "Japanese"
+decks << Deck.new("Spanish") 
+decks << Deck.new("Japanese")
 
 flashcard_game = FlashcardGame.new(decks)
 flashcard_game.play
