@@ -4,16 +4,11 @@ class Pair
 		@value = value
 	end
 
-	attr_reader :key, :value
+	attr_reader :key 
+	attr_accessor :value   			#DOES BOTH ATTR_READER & ATTR_WRITER 
 
-	def value=(new_value)
-		@value = new_value
-	end
+	#attr_reader :value
+	#attr_writer :value 			#same as    def value=(new_value)
+											#	@value = new_value
+											#end
 end
-
-pair = Pair.new("Nate", 25)
-
-pair.value = 28
-
-puts pair.key
-puts pair.value
