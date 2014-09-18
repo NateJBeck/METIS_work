@@ -1,6 +1,6 @@
 class MultipleSum
 	def initialize
-		@numbers = (1..10)
+		@numbers = (1..1000)
 		@numbers_divisible_by_3_or_5 = []
 		@sum = 0	
 	end
