@@ -1,6 +1,3 @@
-require './deck'			#requires local file "deck"
-require './card'			#requires local file "card"
-
 class FlashcardGame 				#everything is in a CLASS
 	def initialize(decks)
 		@decks = decks
@@ -39,22 +36,13 @@ class FlashcardGame 				#everything is in a CLASS
 																	#|deck| is part of array passed in, has a name
 																	#if it matches requested name, it returns the MATCH
 	end
-
 end
+
+#round = Round.new    	is class Round 				*cannot use .PLAY
+#round.play   			is instance of class Round *cannot use .new
 
 #STARTUP SCRIPT -- 	creates game, configures deck and a new game outside of the CLASS GAME
 					#also creates a bunch of cards to put into deck as ARRAY
-decks = []
 
-spanish_cards = []
-spanish_cards << Card.new({ front: "Gato", back: "Cat"})	#adds instances of class CARD within array spanish_cards
-spanish_cards << Card.new({ front: "Perro", back: "Dog"})
-decks << Deck.new({ name: "Spanish", cards: spanish_cards})	#hands new instance of class DECK with name and cards pointing to info
-
-japanese_cards = []
-japanese_cards << Card.new({ front: "Neko", back: "Cat"})
-japanese_cards << Card.new({ front: "Inu", back: "Dog"})
-decks << Deck.new({ name: "Japanese", cards: japanese_cards})
-
-flashcard_game = FlashcardGame.new(decks)
-flashcard_game.play
+				#.each_with_index    gives two things   LINE   INDEX
+				#file.each_with_index { |line, index| puts "#{index} #{line}""

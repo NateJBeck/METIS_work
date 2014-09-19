@@ -5,9 +5,31 @@ class Card
 	end
 
 	def play
-		puts "Front-#{@front}:#{@back}-Back"
+		ask_user_to_translate
+		user_translation = get_user_translation
+
+		tell_them_right_or_wrong(user_translation)		
 	end
-	
+
+	def ask_user_to_translate
+		print "TRANSLATE: #{@front} >> "
+	end
+
+	def get_user_translation
+		input = gets.chomp.downcase
+	end
+
+	def tell_them_right_or_wrong(user_translation)
+		if is_their_answer_right?(user_translation)
+			puts "Correct!"
+		else
+			puts "NOPE"
+		end
+	end
+
+	def is_their_answer_right?(answer)
+		answer == @back.downcase
+	end
 end
 
 
