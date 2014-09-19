@@ -3,7 +3,6 @@ require './music_database'
 class JukeBox
 	def initialize (database)
 		@database = database
-		puts @database
 	end
 
 	def query
@@ -15,8 +14,6 @@ class JukeBox
 		puts "**************"
 
 		puts @database[artist_name]
-
-		#@database[artist_name]
 
 	end
 
