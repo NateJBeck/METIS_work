@@ -1,1 +1,1 @@
-SELECT * FROM images WHERE gallery_id = 1 OR gallery_id = 3 AND likes > 3;
+SELECT * FROM images WHERE gallery_ID IN (1,3) AND likes > 3;
